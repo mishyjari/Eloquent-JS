@@ -1,0 +1,34 @@
+// Eloquent Javascript Chapter 4, Exercise 3
+// 1. Create a function arrayToList() that takes an array and returns the array as a list in the form of nested objects
+// 2. Create a function listToArray() that takes that object and returns an list in the foform of nested objects
+// 3. Add a helper function prepend() that takes an element and a list object and creates a new list object that adds the element to the front of the input object
+// 4. Write a recursive function nth() that takes a list and a number and returns the element at the given position in the list (0 as first element).
+
+const array = [1,2,3];
+
+const list = {
+	value: 1,
+	rest: {
+		value: 2,
+		rest: {
+			value: 3,
+			rest: null
+		}
+	}
+};
+
+const arrayToList = (arr) => {
+	let output = {};
+	let current = {};
+	for ( i = 0; i < arr.length; i++ ) {
+		console.log(current)
+		current = {value: arr[i], next: null}; 
+		console.log(current)
+		current = current.next
+		return current
+	}
+
+	console.log(current);
+};
+
+arrayToList(array);
